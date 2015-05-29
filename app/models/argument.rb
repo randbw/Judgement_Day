@@ -1,15 +1,16 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: arguments
 #
 #  id              :integer          not null, primary key
-#  username        :string
-#  password_digest :string
+#  user_id         :integer
+#  content         :text
+#  voting_complete :boolean
 #  created_at      :datetime
 #  updated_at      :datetime
 #
 
-class User < ActiveRecord::Base
+class Argument < ActiveRecord::Base
+  belongs_to :user
   has_many :votes
-  has_many :arguments
 end

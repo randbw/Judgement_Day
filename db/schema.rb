@@ -11,14 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529061517) do
+ActiveRecord::Schema.define(version: 20150529064625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "arguments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.boolean  "voting_complete"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.boolean  "agree",       default: false
+    t.integer  "user_id"
+    t.integer  "argument_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
