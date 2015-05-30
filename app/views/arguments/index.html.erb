@@ -1,0 +1,10 @@
+<h3>Arguments</h3>
+
+<% @arguments.each do |a| %>
+  <div class="argument">
+    <p>Poster of argument: <%= User.find(a.user_id).username %></p>
+    <p>Posted at: <%= a.created_at %></p>
+    <p>Has voting concluded for this argument? <%= a.voting_complete %></p>
+    <p>Content:<br><%= a.content %></p>
+  </div>
+<% end %>
