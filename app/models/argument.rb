@@ -5,7 +5,7 @@
 #  id              :integer          not null, primary key
 #  user_id         :integer
 #  content         :text
-#  voting_complete :boolean
+#  voting_complete :boolean          default(FALSE)
 #  created_at      :datetime
 #  updated_at      :datetime
 #

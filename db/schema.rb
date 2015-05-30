@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20150529064625) do
   create_table "arguments", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "content"
-    t.boolean  "voting_complete"
+    t.boolean  "voting_complete", default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
