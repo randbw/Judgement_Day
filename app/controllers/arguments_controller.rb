@@ -4,6 +4,7 @@ class ArgumentsController < ApplicationController
   end
 
   def create
+    @argument = Argument.create 
   end
 
   def new
@@ -20,4 +21,10 @@ class ArgumentsController < ApplicationController
 
   def destory
   end
+
+  private
+  def argument_params
+    params.require(:argument).permit(:user_id,:content)
+  end
+
 end
