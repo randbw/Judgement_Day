@@ -1,4 +1,4 @@
-<h3><%= @user.username %></h3>
+<h3>List of arguments posted by <%= @user.username %></h3>
 
 <% @user.arguments.each do |a| %>
   <div class="argument">
@@ -9,4 +9,3 @@
     <p><span class="bolden">Content:</span><br><%= a.content %></p>
   </div>
   <% end %>
-  <button><%= link_to('Delete User',user_path,:method => :delete) %></button>

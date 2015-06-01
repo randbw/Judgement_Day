@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
    @user = User.new user_params
     if @user.save
-      redirect_to root_path
+      redirect_to login_path
     else
       render :new
     end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def destroy
     user = @current_user
     user.destroy
-    @current_user = nil
+    session[:user_id] = nil
     redirect_to root_path
   end
 
