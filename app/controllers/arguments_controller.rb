@@ -4,7 +4,8 @@ class ArgumentsController < ApplicationController
   end
 
   def create
-    @argument = Argument.create argument_params
+    argument = Argument.create argument_params
+    @current_user.arguments << argument
     redirect_to root_path
   end
 

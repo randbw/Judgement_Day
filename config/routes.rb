@@ -26,6 +26,9 @@
 #               PATCH  /users/:id(.:format)          users#update
 #               PUT    /users/:id(.:format)          users#update
 #               DELETE /users/:id(.:format)          users#destroy
+#         login GET    /login(.:format)              session#new
+#               POST   /login(.:format)              session#create
+#               DELETE /login(.:format)              session#destroy
 #
 
 Rails.application.routes.draw do
@@ -35,5 +38,10 @@ Rails.application.routes.draw do
   resources :votes
   resources :arguments
   resources :users
+
+  
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
 
 end

@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'remove_turbolinks'
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'pry-rails'
