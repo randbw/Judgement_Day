@@ -22,7 +22,7 @@ class ArgumentsController < ApplicationController
   def update
   end
 
-  def destory
+  def destroy
   end
 
   private
