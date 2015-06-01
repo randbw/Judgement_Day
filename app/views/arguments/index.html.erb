@@ -2,7 +2,7 @@
 
 <% @arguments.each do |a| %>
   <div class="argument">
-    <p>Poster of argument: <%= User.find(a.user_id).username %></p>
+    <p>Poster of argument: <%= a.user.username if a.user %></p>
     <p>Posted at: <%= a.created_at %></p>
     <p>Has voting concluded for this argument? <%= a.voting_complete %></p>
     <p>Content:<br><%= a.content %></p>
