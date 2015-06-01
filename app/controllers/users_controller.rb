@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = @current_user
   end
 
   def show
@@ -24,9 +25,12 @@ class UsersController < ApplicationController
   end
 
   def update
+    user = @current_user
+    user = user.update user_params
+    redirect_to user_path
   end
 
-  def destory
+  def destroy
   end
 
   private

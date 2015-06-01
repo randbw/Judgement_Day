@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   resources :arguments
   resources :users
 
+  get '/editprofile' => 'users#edit'
   
   get '/login' => 'session#new'
   post '/login' => 'session#create'
