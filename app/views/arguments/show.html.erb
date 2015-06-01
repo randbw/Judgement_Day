@@ -1,7 +1,24 @@
 <div class="argument">
-    <p><span class="bolden">Title:</span><br> <%= @argument.title %></p>
-    <p><span class="bolden">Poster of argument:</span><br> <%= link_to("#{@argument.user.username}", @argument.user) if @argument.user %></p>
-    <p><span class="bolden">Posted at:</span><br> <%= @argument.created_at %></p>
-    <p><span class="bolden">Has voting concluded for this argument?:</span><br> <%= @argument.voting_complete %></p>
-    <p><span class="bolden">Content:</span><br><%= @argument.content %></p>
+    <p>
+    <span class="bolden">Title:</span><br> <%=link_to( "#{@argument.title}",@argument) %>
+    </p>
+    <p>
+    <span class="bolden">Poster of argument:</span><br> <%= link_to("#{@argument.user.username}", @argument.user) if @argument.user %>
+    </p>
+    <p>
+    <span class="bolden">Posted at:</span><br> <%= @argument.created_at %>
+    </p>
+    <p>
+    <span class="bolden">Has voting concluded for this argument?:</span><br> <%= @argument.voting_complete %>
+    </p>
+    <p>
+    <span class="bolden">Content:</span><br><%= @argument.content %>
+    </p>
+
+    <div class="votesfor">
+    <p><span class="bolden">Votes for: </span> <%= @vote_for %></p>
+    </div>
+    <div class="votesagainst">
+      <p><span class="bolden">Votes against: </span><%= @vote_against %></p>
+    </div>
   </div>

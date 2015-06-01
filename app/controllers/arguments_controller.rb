@@ -18,6 +18,7 @@ class ArgumentsController < ApplicationController
 
   def show
     @argument = Argument.find params[:id]
+    count_votes
   end
 
   def update
@@ -31,4 +32,16 @@ class ArgumentsController < ApplicationController
     params.require(:argument).permit(:user_id,:content)
   end
 
+  def count_votes
+    @vote_for = 0
+    @vote_against = 0
+    votes = @argument.votes
+    votes.each do |v|
+      if v.agree
+        @vote_for += 1
+      elsif !v.agree
+        @vote_against += 1
+      end
+  end
+  end
 end
