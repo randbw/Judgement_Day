@@ -13,7 +13,7 @@
     <ul>
       <li><%= link_to('Home', root_path) %></li>
       <li><%= link_to('Create Account', 'users/new') %></li>
-      <li>Logged in as: <%= @current_user.username %></li>
+      <li>Logged in as: <%= @current_user.username if @current_user %></li>
     </ul>
   </nav>
 
