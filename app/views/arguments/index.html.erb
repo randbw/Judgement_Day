@@ -1,5 +1,7 @@
 <h3>Arguments</h3>
+<% if @current_user %>
 <p><span class="createArg"><%= link_to('New argument',new_argument_path) %></span></p>
+<% end %>
 
 <% @arguments.each do |a| %>
   <div class="argument">
