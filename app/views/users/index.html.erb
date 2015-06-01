@@ -8,6 +8,7 @@
 <% @users.each do |u| %>
 <div class="user">
   <ul>
-  <li><span class="bold">Username:</span><%=u.username%></li>
+  <li><%=link_to("#{u.username}",u)%></li>
   </ul>
 </div>
+<% end %>
