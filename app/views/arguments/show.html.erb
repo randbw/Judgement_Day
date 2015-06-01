@@ -1,2 +1,7 @@
-<h1>Arguments#show</h1>
-<p>Find me in app/views/arguments/show.html.erb</p>
+<div class="argument">
+    <p><span class="bolden">Title:</span><br> <%= @argument.title %></p>
+    <p><span class="bolden">Poster of argument:</span><br> <%= link_to("#{@argument.user.username}", @argument.user) if @argument.user %></p>
+    <p><span class="bolden">Posted at:</span><br> <%= @argument.created_at %></p>
+    <p><span class="bolden">Has voting concluded for this argument?:</span><br> <%= @argument.voting_complete %></p>
+    <p><span class="bolden">Content:</span><br><%= @argument.content %></p>
+  </div>

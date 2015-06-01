@@ -17,6 +17,7 @@ class ArgumentsController < ApplicationController
   end
 
   def show
+    @argument = Argument.find params[:id]
   end
 
   def update
