@@ -3,9 +3,13 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new user_params
+    @user.save
+    redirect_to root_path
   end
 
   def new
+    @user = User.new
   end
 
   def edit
@@ -18,5 +22,10 @@ class UsersController < ApplicationController
   end
 
   def destory
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
 end
