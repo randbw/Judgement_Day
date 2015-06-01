@@ -4,10 +4,12 @@ class ArgumentsController < ApplicationController
   end
 
   def create
-    @argument = Argument.create 
+    @argument = Argument.create argument_params
+    redirect_to root_path
   end
 
   def new
+    @argument = Argument.new
   end
 
   def edit
