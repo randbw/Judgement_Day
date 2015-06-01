@@ -3,9 +3,9 @@
 
 <% @arguments.each do |a| %>
   <div class="argument">
-    <p>Poster of argument: <%= a.user.username if a.user %></p>
-    <p>Posted at: <%= a.created_at %></p>
-    <p>Has voting concluded for this argument? <%= a.voting_complete %></p>
-    <p>Content:<br><%= a.content %></p>
+    <p><span class="bolden">Poster of argument:</span><br> <%= a.user.username if a.user %></p>
+    <p><span class="bolden">Posted at:</span><br> <%= a.created_at %></p>
+    <p><span class="bolden">Has voting concluded for this argument?:</span><br> <%= a.voting_complete %></p>
+    <p><span class="bolden">Content:</span><br><%= a.content %></p>
   </div>
 <% end %>
