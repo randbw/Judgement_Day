@@ -24,7 +24,7 @@
 
   <% if @current_user && argument.user_id == @current_user.id %>
       <%= button_to('Delete Argument',argument,:method => :delete) %>
-  <% else %>
+  <% elsif @current_user %>
     <%= button_to('Vote for this!', argument_for_path(argument.id),:method => :post) %>
     <%= button_to('Vote against this!', argument_against_path(argument.id),:method => :post) %>
   <% end %>
