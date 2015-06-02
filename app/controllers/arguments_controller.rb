@@ -13,14 +13,8 @@ class ArgumentsController < ApplicationController
     @argument = Argument.new
   end
 
-  def edit
-  end
-
   def show
     @argument = Argument.find params[:id]
-  end
-
-  def update
   end
 
   def destroy
