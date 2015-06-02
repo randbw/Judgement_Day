@@ -5,7 +5,16 @@
   <%= link_to("#{user.username}",user) %>
 </p>
 <p>
-  <span class="bolden">Example1</span>
+  <span class="bolden">Total Votes: </span><%= user.votes.count %>
+</p>
+<p>
+  <span class="bolden">Times voted correctly: </span>
+</p>
+<p>
+  <span class="bolden">Total Arguments: </span><%= user.arguments.count %>
+</p>
+<p>
+  <span class="bolden">Arguments Won: </span>
 </p>
 
 
