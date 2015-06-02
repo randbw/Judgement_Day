@@ -2,13 +2,4 @@
 <% if @current_user %>
 <p><span class="createArg"><%= link_to('New argument',new_argument_path) %></span></p>
 <% end %>
-
-<% @arguments.each do |a| %>
-  <div class="argument">
-    <p><span class="bolden">Title:</span><br> <%=link_to("#{a.title}",argument_path(a)) %></p>
-    <p><span class="bolden">Poster of argument:</span><br> <%= link_to("#{a.user.username}", a.user) if a.user %></p>
-    <p><span class="bolden">Posted at:</span><br> <%= a.created_at %></p>
-    <p><span class="bolden">Has voting concluded for this argument?:</span><br> <%= a.voting_complete %></p>
-    <p><span class="bolden">Content:</span><br><%= a.content %></p>
-  </div>
-<% end %>
+<%= render partial: "argument", collection: @arguments %>
