@@ -29,7 +29,7 @@ class ArgumentsController < ApplicationController
 
   private
   def argument_params
-    params.require(:argument).permit(:user_id,:content)
+    params.require(:argument).permit(:user_id,:content,:title)
   end
 
   def count_votes

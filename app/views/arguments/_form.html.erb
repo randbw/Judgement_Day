@@ -1,6 +1,10 @@
 <%= form_for @argument do |f|  %>
   <p>
-    <%= f.label :content, "Argument: "  %>
+    <%= f.label :title, "Title: " %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+  <%= f.label :content, "Argument:"  %>
   </p>
   <p>
     <%= f.text_area :content, :class => :bigBox, :autofocus => true %>
