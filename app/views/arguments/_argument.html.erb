@@ -6,7 +6,7 @@
   <span class="bolden">Poster of argument:</span><br> <%= link_to("#{argument.user.username}", argument.user) if argument.user %>
   </p>
   <p>
-  <span class="bolden">Posted at:</span><br> <%= argument.created_at %>
+  <span class="bolden">Posted at:</span><br> <%=argument.created_at.strftime "%A, %d %b %Y %l:%M %p"%>
   </p>
   <p>
   <span class="bolden">Has voting concluded for this argument?:</span><br> <%= argument.voting_complete %>
@@ -28,5 +28,5 @@
     <%= button_to('Vote for this!', argument_for_path(argument.id),:method => :post) %>
     <%= button_to('Vote against this!', argument_against_path(argument.id),:method => :post) %>
   <% end %>
-  
+
 </div>
