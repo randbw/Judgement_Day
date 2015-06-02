@@ -45,4 +45,7 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
+  post '/arguments/:id/for' => 'arguments#for', :as => 'argument_for'
+  post '/arguments/:id/against' => 'arguments#against', :as => 'argument_against'
+
 end

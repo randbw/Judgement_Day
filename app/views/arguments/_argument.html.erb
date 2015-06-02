@@ -22,10 +22,11 @@
     <p><span class="bolden">Votes against: </span><%= argument.against %></p>
   </div>
 
-  <% if @current_user %>
-      <% if argument.user_id == @current_user.id %>
+  <% if @current_user && argument.user_id == @current_user.id %>
       <%= button_to('Delete Argument',argument,:method => :delete) %>
-      <% end %>
+  <% else %>
+    <%= button_to('Vote for this!', argument_for_path(argument.id),:method => :post) %>
+    <%= button_to('Vote against this!', argument_against_path(argument.id),:method => :post) %>
   <% end %>
   
 </div> 
