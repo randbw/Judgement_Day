@@ -33,4 +33,13 @@ class Argument < ActiveRecord::Base
     end
     votes
   end
+
+  def complete?
+    if voting_complete
+      'Yes'
+    elsif !voting_complete
+      'No'
+    end
+  end
+      
 end

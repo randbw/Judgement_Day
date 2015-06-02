@@ -26,7 +26,6 @@ class ArgumentsController < ApplicationController
   def for
     @argument = Argument.find params[:id]
     @argument.votes.create :agree => true, :user_id => @current_user.id
-    # @argument.votes.where(:user_id => @current_user.id).count > 1
     redirect_to @argument
   end
 
