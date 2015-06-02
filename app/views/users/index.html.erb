@@ -1,9 +1,11 @@
 <h3>List of Accounts</h3>
 
-<% @users.each do |u| %>
+<%= render :partial => 'user', collection: @users %>
+
+<!-- <% @users.each do |u| %>
 <div class="user">
   <ul>
   <li><%=link_to("#{u.username}",u)%></li>
   </ul>
 </div>
-<% end %>
+<% end %> -->

@@ -1,2 +1,6 @@
+
+<%= render :partial => 'user', object: @user %>
+
+
 <h3>List of arguments posted by <%= @user.username %></h3>
 <%= render :partial => 'arguments/argument', collection: @user.arguments, object: @argument %>
