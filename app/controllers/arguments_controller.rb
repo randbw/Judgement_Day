@@ -24,6 +24,9 @@ class ArgumentsController < ApplicationController
   end
 
   def destroy
+    @argument = Argument.find params[:id]
+    @argument.destroy
+    redirect_to :back
   end
 
   private
