@@ -13,4 +13,24 @@
 class Argument < ActiveRecord::Base
   belongs_to :user
   has_many :votes
+
+  def for
+    votes = 0
+    self.votes.each do |v|
+      if v.agree
+        votes +=1
+      end
+    end
+    votes
+  end
+
+  def against
+    votes = 0
+    self.votes.each do |v|
+      unless v.agree
+        votes += 1
+      end
+    end
+    votes
+  end
 end

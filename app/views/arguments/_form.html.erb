@@ -1,13 +1,13 @@
 <%= form_for @argument do |f|  %>
   <p>
     <%= f.label :title, "Title: " %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :required => true, :autofocus => true %>
   </p>
   <p>
   <%= f.label :content, "Argument:"  %>
   </p>
   <p>
-    <%= f.text_area :content, :class => :bigBox, :autofocus => true %>
+    <%= f.text_area :content, :class => :bigBox,:required => true %>
   </p>
   <%= f.submit %>
 
