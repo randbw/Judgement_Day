@@ -6,13 +6,15 @@
 <% end %>
 
 <div class="order">
-  <h4>Order by...</h4>
-  <%= link_to('Most popular',"/?order=popular") %>
-  <%= link_to('Least popular',"/?order=leastpop") %>
-  <%= link_to('Created most recently',"/?order=recent") %>
-  <%= link_to('Created earliest',"/?order=earliest") %>
-  <%= link_to('Voting complete',"/?order=voted") %>
-  <%= link_to("Default order",arguments_path)  %>
+  <ul>
+    <li>Order by...:</li>
+    <li><%= link_to('Most popular',"/?order=popular") %></li>
+    <li><%= link_to('Least popular',"/?order=leastpop") %></li>
+    <li><%= link_to('Created most recently',"/?order=recent") %></li>
+    <li><%= link_to('Created earliest',"/?order=earliest") %></li>
+    <li><%= link_to('Voting complete',"/?order=voted") %></li>
+    <li><%= link_to("Default order",arguments_path)  %></li>
+  </ul>
 </div>
 
 <%= render partial: "argument", collection: @arguments %>

@@ -1,12 +1,14 @@
 <h3>Users</h3>
 
 <div class="order">
-  <h4>Order by...</h4>
-  <%= link_to('Most votes placed','/users?order=mvp') %>
-  <%= link_to('Most votes correct', '/users?order=mvc') %>
-  <%= link_to('Most arguments posted','/users?order=map') %>
-  <%= link_to('Most arguments won','/users?order=maw') %>
-  <%= link_to("Default order",users_path)  %>
+  <ul>
+    <li>Order by...:</li>
+    <li><%= link_to('Most votes placed','/users?order=mvp') %></li>
+    <li><%= link_to('Most votes correct', '/users?order=mvc') %></li>
+    <li><%= link_to('Most arguments posted','/users?order=map') %></li>
+    <li><%= link_to('Most arguments won','/users?order=maw') %></li>
+    <li><%= link_to("Default order",users_path)  %></li>
+  </ul>
 </div>
 
 <%= render :partial => 'user', collection: @users %> 
