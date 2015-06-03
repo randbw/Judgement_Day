@@ -51,5 +51,17 @@ class Argument < ActiveRecord::Base
       'No'
     end
   end
+
+  def argument_over
+    # due to the low amount of users i will settle on a fixed number of votes
+    # but in future would be cool, if I got the users, to have a fixed percentage
+    # of total users to have voted to determine an argument as over.
+    with = self.for
+    against = self.against
+    if with + against > 5 && with != against
+      self.voting_complete = true
+      self.save
+    end
+  end
       
 end

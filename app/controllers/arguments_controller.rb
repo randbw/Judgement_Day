@@ -26,12 +26,14 @@ class ArgumentsController < ApplicationController
   def for
     @argument = Argument.find params[:id]
     @argument.votes.create :agree => true, :user_id => @current_user.id
+    @argument.argument_over
     redirect_to @argument
   end
 
   def against
     @argument = Argument.find params[:id]
     @argument.votes.create :user_id => @current_user.id
+    @argument.argument_over
     redirect_to @argument
   end
 
