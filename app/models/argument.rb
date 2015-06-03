@@ -18,7 +18,7 @@ class Argument < ActiveRecord::Base
     votes = 0
     self.votes.each do |v|
       if v.agree
-        votes +=1
+        votes += 1
       end
     end
     votes
@@ -32,6 +32,18 @@ class Argument < ActiveRecord::Base
       end
     end
     votes
+  end
+
+  def argument_voted_with
+    with = argument.for
+    against = argument.against
+    if with > against
+      true
+    elsif against > with
+      false
+    elsif with == against
+      return "Draw!"
+    end
   end
 
   def complete?

@@ -14,6 +14,30 @@ class User < ActiveRecord::Base
   has_many :arguments#, :dependent => :destroy
   has_secure_password
 
+  def votes_correct
+    vote_count = 0
+    self.votes.each do |v|
+      if v.argument.voting_complete
+        correct = v.argument.argument_voted_with
+        if correct && v
+          vote_count += 1
+        elsif !correct && !v
+          vote_count += 1
+        end
+      end
+    end
+    vote_count
+  end
 
-  
+  def arguments_won
+    argument_count = 0
+    self.arguments.each do |a|
+      if a.voting_complete
+        if a.argument_voted_with
+          argument_count += 1
+        end
+      end
+    end
+    argument_count
+  end
 end
