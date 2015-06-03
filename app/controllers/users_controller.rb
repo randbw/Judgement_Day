@@ -1,6 +1,22 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+
+    case params[:order]
+      when 'mvp' then @users = @users.sort_by do |user|
+        user.votes.count
+      end.reverse
+      when 'mvc' then @users = @users.sort_by do |user|
+        user.votes_correct
+      end.reverse
+      when 'map' then @users = @users.sort_by do |user|
+        user.arguments.count
+      end.reverse
+      when 'maw' then @users = @users.sort_by do |user|
+        user.arguments_won
+      end.reverse
+    end
+
   end
 
   def create

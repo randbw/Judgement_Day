@@ -1,12 +1,11 @@
-<h3>List of Accounts</h3>
+<h3>Users</h3>
 
 <div class="order">
-  <%= link_to('Most popular',"/?order=popular") %>
-  <%= link_to('Least popular',"/?order=leastpop") %>
-  <%= link_to('Created most recently',"/?order=recent") %>
-  <%= link_to('Created earliest',"/?order=earliest") %>
-  <%= link_to('Voting complete',"/?order=voted") %>
-  <%= link_to("Default order",arguments_path)  %>
+  <%= link_to('Most votes placed','/users?order=mvp') %>
+  <%= link_to('Most votes correct', '/users?order=mvc') %>
+  <%= link_to('Most arguments posted','/users?order=map') %>
+  <%= link_to('Most arguments won','/users?order=maw') %>
+  <%= link_to("Default order",users_path)  %>
 </div>
 
 <%= render :partial => 'user', collection: @users %> 
