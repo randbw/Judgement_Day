@@ -61,7 +61,22 @@ class User < ActiveRecord::Base
   end
 
   def argument_master
+    argument_total = self.arguments.count
+    argument_victory = self.arguments_won
 
+    if argument_total > 0
+      if argument_victory == argument_total && argument_total > 1
+        return "Flawless thought constructor"
+      elsif argument_victory > (argument_total / 2)
+        return "You'd do well to listen to #{self.username}"
+      elsif argument_victory <= (argument_total / 2)
+        return "Require assistance with all things"
+      elsif argument_victory == 0
+        return "Avoid absorbing my opinions for your own benefit"
+      end
+    elsif argument_total == 0
+      return "No disccusions. No brains"
+    end
   end
 
 end
