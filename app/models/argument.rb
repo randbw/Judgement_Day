@@ -12,7 +12,7 @@
 
 class Argument < ActiveRecord::Base
   belongs_to :user
-  has_many :votes
+  has_many :votes, :dependent => :destroy
 
   def for
     votes = 0
@@ -41,8 +41,6 @@ class Argument < ActiveRecord::Base
       true
     elsif against > with
       false
-    elsif with == against
-      return "Draw!"
     end
   end
 
