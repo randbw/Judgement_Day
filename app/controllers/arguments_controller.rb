@@ -5,15 +5,12 @@ class ArgumentsController < ApplicationController
       when 'popular' then @arguments = @arguments.sort_by do |argument|
         argument.votes.count
         end.reverse
-      when 'recent' then @arguments = @arguments.sort_by do |argument|
-        argument.created_at
-        end.reverse
       when 'leastpop' then @arguments = @arguments.sort_by do |argument|
         argument.votes.count
       end
-      # when 'votingcom' then @arguments = @arguments.sort_by do |argument|
-      #   argument.voting_complete
-      #   end.reverse
+      when 'recent' then @arguments = @arguments.order(:created_at).reverse
+      when 'earliest' then @arguments = @arguments.order(:created_at)
+      when 'voted' then @arguments = @arguments.order(:voting_complete).reverse
     end
   end
 

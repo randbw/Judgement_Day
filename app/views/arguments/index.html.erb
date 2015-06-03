@@ -2,8 +2,11 @@
 <% if @current_user %>
 <p><span class="createArg"><%= link_to('New argument',new_argument_path) %></span></p>
 <% end %>
-<%= link_to('Most popular',"/?order=popular") %>
-<%= link_to('Least popular',"/?order=leastpop") %>
-<%= link_to('Recently updated',"/?order=recent") %>
-<!-- <%= link_to('Voting Complete',"/?order=votingcom") %> -->
+<div class="order">
+  <%= link_to('Most popular',"/?order=popular") %>
+  <%= link_to('Least popular',"/?order=leastpop") %>
+  <%= link_to('Created most recently',"/?order=recent") %>
+  <%= link_to('Created earliest',"/?order=earliest") %>
+  <%= link_to('Voting Complete',"/?order=voted") %>
+</div>
 <%= render partial: "argument", collection: @arguments %>
