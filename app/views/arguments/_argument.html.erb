@@ -1,25 +1,29 @@
 <div class="argument">
+  <h3>
+    <%=link_to( "#{argument.title}",argument) %>
+  </h3>
   <p>
-  <span class="bolden">Title:</span><br> <%=link_to( "#{argument.title}",argument) %>
+    <span class="bolden">Posted by:</span> <%= link_to("#{argument.user.username}", argument.user) if argument.user %>
   </p>
   <p>
-  <span class="bolden">Poster of argument:</span><br> <%= link_to("#{argument.user.username}", argument.user) if argument.user %>
+    <span class="bolden">Posted:</span> <%=argument.created_at.strftime "%A, %d %b %Y %l:%M %p"%>
   </p>
   <p>
-  <span class="bolden">Posted at:</span><br> <%=argument.created_at.strftime "%A, %d %b %Y %l:%M %p"%>
+    <span class="bolden">Voting concluded?: </span><%= argument.complete? %>
   </p>
   <p>
-  <span class="bolden">Has voting concluded for this argument?:</span><br> <%= argument.complete? %>
-  </p>
-  <p>
-  <span class="bolden">Content:</span><br><%= argument.content %>
+    <span class="bolden">Content:</span><br><%= argument.content %>
   </p>
 
   <div class="votesfor">
-  <p><span class="bolden">Votes for: </span> <%= argument.for %></p>
+    <p>
+      <span class="bolden">Votes for: </span> <%= argument.for %>
+    </p>
   </div>
   <div class="votesagainst">
-    <p><span class="bolden">Votes against: </span><%= argument.against %></p>
+    <p>
+      <span class="bolden">Votes against: </span><%= argument.against %>
+    </p>
   </div>
 
   <% if @current_user && argument.user_id == @current_user.id %>

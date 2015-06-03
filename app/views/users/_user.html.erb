@@ -1,11 +1,10 @@
 <div class="user">
   
-<p>
-  <span class="bolden">Username:</span>
+<h3>
   <%= link_to("#{user.username}",user) %>
-</p>
+</h3>
 <p>
-  <span class="bolden">Times Votes: </span><%= user.votes.count %>
+  <span class="bolden">Times Voted: </span><%= user.votes.count %>
 </p>
 <p>
   <span class="bolden">Times voted correctly: </span><%= user.votes_correct %>
