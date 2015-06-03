@@ -1,12 +1,17 @@
 <h3>Arguments</h3>
 <% if @current_user %>
-<p><span class="createArg"><%= link_to('New argument',new_argument_path) %></span></p>
+  <p>
+    <span class="createArg"><%= link_to('New argument',new_argument_path)%></span>
+  </p>
 <% end %>
+
 <div class="order">
   <%= link_to('Most popular',"/?order=popular") %>
   <%= link_to('Least popular',"/?order=leastpop") %>
   <%= link_to('Created most recently',"/?order=recent") %>
   <%= link_to('Created earliest',"/?order=earliest") %>
-  <%= link_to('Voting Complete',"/?order=voted") %>
+  <%= link_to('Voting complete',"/?order=voted") %>
+  <%= link_to("Default order",arguments_path)  %>
 </div>
+
 <%= render partial: "argument", collection: @arguments %>
