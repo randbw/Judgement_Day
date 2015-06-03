@@ -40,4 +40,53 @@ class User < ActiveRecord::Base
     end
     argument_count
   end
+
+  def vote_master
+    vote_total = self.votes.count
+    vote_correct = self.votes_correct
+
+    if vote_total > 0
+      if vote_correct == vote_total && vote_total > 1
+        return "Listen to #{self.username}'s opinion on all matters"
+      elsif vote_correct > (vote_total / 2)
+        return "Critical thinker"
+      elsif vote_correct <= (vote_total / 2)
+        return "Disagree with me regularly or I will bring your intelligence down"
+      elsif vote_correct == 0
+        return "Ignore everything that comes from my mouth"
+      end
+    elsif vote_total == 0
+      return "Indecisive fool"
+    end
+  end
+
+  def argument_master
+
+  end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
