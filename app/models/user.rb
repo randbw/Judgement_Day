@@ -19,9 +19,9 @@ class User < ActiveRecord::Base
     self.votes.each do |v|
       if v.argument.voting_complete
         correct = v.argument.argument_voted_with
-        if correct && v
+        if correct && v.agree
           vote_count += 1
-        elsif !correct && !v
+        elsif !correct && !v.agree
           vote_count += 1
         end
       end

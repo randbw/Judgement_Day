@@ -35,8 +35,8 @@ class Argument < ActiveRecord::Base
   end
 
   def argument_voted_with
-    with = argument.for
-    against = argument.against
+    with = self.for
+    against = self.against
     if with > against
       true
     elsif against > with
