@@ -31,7 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'remove_turbolinks'
-gem 'twitter-bootstrap-rails', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.3.4'
 gem 'rails_12factor', group: :production
 
 group :development do
