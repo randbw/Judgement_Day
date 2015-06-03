@@ -75,7 +75,7 @@ class User < ActiveRecord::Base
         return "Avoid absorbing my opinions for your own benefit"
       end
     elsif argument_total == 0
-      return "No disccusions. No brains"
+      return "No discussions. No brains"
     end
   end
 
