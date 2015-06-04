@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
       elsif vote_correct > (vote_total / 2)
         return "Critical thinker"
       elsif vote_correct <= (vote_total / 2)
-        return "Disagree with me regularly or I will bring your intelligence down"
+        return "I am going to give you up, let you down, run around and desert you"
       elsif vote_correct == 0
         return "Ignore everything that comes from my mouth"
       end
@@ -70,9 +70,9 @@ class User < ActiveRecord::Base
       elsif argument_victory > (argument_total / 2)
         return "You'd do well to listen to #{self.username}"
       elsif argument_victory <= (argument_total / 2)
-        return "Require assistance with all things"
+        return "Requires assistance with all things"
       elsif argument_victory == 0
-        return "Avoid absorbing my opinions for your own benefit"
+        return "All my life's knowledge is worthless"
       end
     elsif argument_total == 0
       return "No discussions. No brains"
