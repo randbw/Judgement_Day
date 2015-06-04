@@ -42,6 +42,8 @@ class User < ActiveRecord::Base
   end
 
   def vote_master
+    # Determines the reputation one has from votes by how many times the user 
+    # has voted correctly on finalised arguments
     vote_total = self.votes.count
     vote_correct = self.votes_correct
 
@@ -61,6 +63,8 @@ class User < ActiveRecord::Base
   end
 
   def argument_master
+    # Determines the reputation one has from votes by how many times the user has
+    # had arguments go in their favour
     argument_total = self.arguments.count
     argument_victory = self.arguments_won
 
@@ -80,28 +84,3 @@ class User < ActiveRecord::Base
   end
 
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
