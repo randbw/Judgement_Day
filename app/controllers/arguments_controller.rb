@@ -11,6 +11,7 @@ class ArgumentsController < ApplicationController
       when 'recent' then @arguments = @arguments.order(:created_at).reverse
       when 'earliest' then @arguments = @arguments.order(:created_at)
       when 'voted' then @arguments = @arguments.order(:voting_complete).reverse
+      when 'notvoted' then @arguments = @arguments.order(:voting_complete)
     end
   end
 
