@@ -10,7 +10,7 @@ h1 {
   text-align: center;
 }
 body {
-  margin-top: 100px;
+  margin-top: 85px;
   background-color: gainsboro;
 }
 .mainContainer {
@@ -57,4 +57,11 @@ a {
 }
 .navbar-text {
  font-size: 2em;
+}
+.dropdown {
+  display: inline-block;
+  margin-left: 20px;
+}
+h3 {
+  display: inline-block;
 }

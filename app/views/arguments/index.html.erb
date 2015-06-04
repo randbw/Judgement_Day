@@ -1,9 +1,4 @@
 <h3>Arguments</h3>
-<% if @current_user %>
-  <p>
-    <span class="createArg"><%= link_to('New argument',new_argument_path)%></span>
-  </p>
-<% end %>
 
 <div class="dropdown">
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
@@ -13,11 +8,17 @@
   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
     <li role="presentation"><%= link_to('Most popular',"/?order=popular") %></li>
     <li role="presentation"><%= link_to('Least popular',"/?order=leastpop") %></li>
-    <li role="presentation"><%= link_to('Created most recently',"/?order=recent") %></li>
-    <li role="presentation"><%= link_to('Created earliest',"/?order=earliest") %></li>
+    <li role="presentation"><%= link_to('Most recent',"/?order=recent") %></li>
+    <li role="presentation"><%= link_to('Oldest',"/?order=earliest") %></li>
     <li role="presentation"><li><%= link_to('Voting complete',"/?order=voted") %></li></li>
     <li role="presentation"><li><%= link_to("Default order",arguments_path) %></li></li>
   </ul>
 </div>
+
+<% if @current_user %>
+  <p>
+    <span class="createArg"><%= link_to('Post new argument',new_argument_path)%></span>
+  </p>
+<% end %>
 
 <%= render partial: "argument", collection: @arguments %>
