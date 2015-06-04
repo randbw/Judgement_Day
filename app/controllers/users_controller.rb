@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
-
+    users = User.all 
+    @users = users.sort_by do |user|
+      user.username.downcase
+    end
     case params[:order]
       when 'mvp' then @users = @users.sort_by do |user|
         user.votes.count
