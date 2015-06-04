@@ -1,6 +1,10 @@
 class ArgumentsController < ApplicationController
   def index
-    @arguments = Argument.all
+    arguments = Argument.all
+    # show them with the arguments with most votes coming first
+    @arguments = arguments.sort_by do |argument|
+        argument.votes.count
+      end.reverse
     case params[:order]
       when 'popular' then @arguments = @arguments.sort_by do |argument|
         argument.votes.count
