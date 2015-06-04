@@ -1,7 +1,7 @@
 <h3>Log in</h3>
 
 <% if flash[:notice] %>
-  <%= flash[:notice] %>
+  <div class="alert alert-info block" role="alert"><%= flash[:notice] %></div>
 <% end %>
 
 <%= form_tag '/login' do %>

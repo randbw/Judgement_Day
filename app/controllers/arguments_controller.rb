@@ -6,16 +6,16 @@ class ArgumentsController < ApplicationController
         argument.votes.count
       end.reverse
     case params[:order]
-      when 'popular' then @arguments = @arguments.sort_by do |argument|
+      when 'popular' then @arguments = Argument.all.sort_by do |argument|
         argument.votes.count
         end.reverse
-      when 'leastpop' then @arguments = @arguments.sort_by do |argument|
+      when 'leastpop' then @arguments = Argument.all.sort_by do |argument|
         argument.votes.count
       end
-      when 'recent' then @arguments = @arguments.order(:created_at).reverse
-      when 'earliest' then @arguments = @arguments.order(:created_at)
-      when 'voted' then @arguments = @arguments.order(:voting_complete).reverse
-      when 'notvoted' then @arguments = @arguments.order(:voting_complete)
+      when 'recent' then @arguments = Argument.all.order(:created_at).reverse
+      when 'earliest' then @arguments = Argument.all.order(:created_at)
+      when 'voted' then @arguments = Argument.all.order(:voting_complete).reverse
+      when 'notvoted' then @arguments = Argument.all.order(:voting_complete)
     end
   end
 

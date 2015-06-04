@@ -11,7 +11,7 @@ h1 {
 }
 body {
   margin-top: 85px;
-  background-color: gainsboro;
+  background-color: rgba(226, 215, 208, 1);
 }
 .mainContainer {
   max-width: 960px;
@@ -44,7 +44,7 @@ nav ul li {
   font-weight: bold;
 }
 a {
-  color: fuchsia;
+  color: rgb(142,151,255);
 }
 .order li {
   display:inline-block;
@@ -64,5 +64,5 @@ h3 {
   display: inline-block;
 }
 .completed {
-  background-color: rgba(255,0,0,0.1);
+  background-color: rgba(142,151,255,0.3);
 }
