@@ -5,15 +5,18 @@
   </p>
 <% end %>
 
-<div class="order">
-  <ul>
-    <li>Order by...:</li>
-    <li><%= link_to('Most popular',"/?order=popular") %></li>
-    <li><%= link_to('Least popular',"/?order=leastpop") %></li>
-    <li><%= link_to('Created most recently',"/?order=recent") %></li>
-    <li><%= link_to('Created earliest',"/?order=earliest") %></li>
-    <li><%= link_to('Voting complete',"/?order=voted") %></li>
-    <li><%= link_to("Default order",arguments_path)  %></li>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    Order by...
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><%= link_to('Most popular',"/?order=popular") %></li>
+    <li role="presentation"><%= link_to('Least popular',"/?order=leastpop") %></li>
+    <li role="presentation"><%= link_to('Created most recently',"/?order=recent") %></li>
+    <li role="presentation"><%= link_to('Created earliest',"/?order=earliest") %></li>
+    <li role="presentation"><li><%= link_to('Voting complete',"/?order=voted") %></li></li>
+    <li role="presentation"><li><%= link_to("Default order",arguments_path) %></li></li>
   </ul>
 </div>
 
