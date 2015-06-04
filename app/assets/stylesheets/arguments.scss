@@ -10,6 +10,7 @@ h1 {
   text-align: center;
 }
 body {
+  margin-top: 100px;
   background-color: gainsboro;
 }
 .mainContainer {
@@ -20,11 +21,12 @@ nav {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 }
-nav li {
+nav ul li {
   display: inline-block;
   text-align: center;
   text-decoration: none;
   margin: 0 15px;
+  padding-top: 28px;
 }
 .argument {
   border: 1px solid black;
@@ -49,4 +51,10 @@ a {
 .order li {
   display:inline-block;
   margin: 0 10px;
+}
+.signedin {
+  color: gainsboro;
+}
+.navbar-text {
+ font-size: 2em;
 }

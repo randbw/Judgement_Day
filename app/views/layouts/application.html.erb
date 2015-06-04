@@ -10,17 +10,17 @@
 <div class="mainContainer">
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <ul>
-      <li class="navbar-text">Judgement Day</li>
+      <p class="navbar-text"></span>Judgement Day <span class="glyphicon glyphicon-scale" aria-hidden="true"></p>
       <li><%= link_to('View arguments', root_path) %></li>
       <li><%= link_to('View users',users_path) %></li>
         <% if @current_user.present? %>
         <li><%= link_to('New argument',new_argument_path) %></li>
         <li class='pull-right'><%= link_to("Log out",login_path, :method => :delete) %></li>
         <li class='pull-right'><%= link_to("Edit #{@current_user.username}", edit_user_path(@current_user)) %></li>
-        <li class='pull-right'><%= @current_user.username %> logged in</li>
+        <li class='pull-right signedin'><%= @current_user.username %> logged in</li>
       <% else %>
-        <li class='pull-right'><%= link_to('Login',login_path) %></li>
         <li class='pull-right'><%= link_to('Create Account', new_user_path) %></li>
+        <li class='pull-right'><%= link_to('Login',login_path) %></li>
       <% end %>
     </ul>
   </nav>
