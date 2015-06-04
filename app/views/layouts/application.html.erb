@@ -10,7 +10,7 @@
 <div class="mainContainer">
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <ul>
-      <p class="navbar-text"></span>Judgement Day <span class="glyphicon glyphicon-scale" aria-hidden="true"></p>
+      <p class="navbar-text"></span><%= link_to('Judgement Day',root_path) %> <span class="glyphicon glyphicon-scale" aria-hidden="true"></p>
       <li><%= link_to('View arguments', root_path) %></li>
       <li><%= link_to('View users',users_path) %></li>
         <% if @current_user.present? %>
