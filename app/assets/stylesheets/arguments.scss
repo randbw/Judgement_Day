@@ -28,10 +28,11 @@ nav ul li {
   margin: 0 15px;
   padding-top: 28px;
 }
-.argument {
+.argument, .user {
   border: 1px solid black;
   padding: 0 10px;
   margin: 10px 0px;
+  border-radius: 5px;
 }
 .bigBox {
   height: 150px;
@@ -42,11 +43,6 @@ nav ul li {
 }
 a {
   color: fuchsia;
-}
-.user {
-  border: 1px solid black;
-  padding: 0 10px;
-  margin: 10px 0px;
 }
 .order li {
   display:inline-block;
@@ -64,4 +60,8 @@ a {
 }
 h3 {
   display: inline-block;
+}
+.completed {
+  background-color: rgba(255,0,0,0.3);
+
 }
