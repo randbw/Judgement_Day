@@ -1,13 +1,16 @@
 <h3>Users</h3>
 
-<div class="order">
-  <ul>
-    <li>Order by...:</li>
-    <li><%= link_to('Most votes placed','/users?order=mvp') %></li>
-    <li><%= link_to('Most votes correct', '/users?order=mvc') %></li>
-    <li><%= link_to('Most arguments posted','/users?order=map') %></li>
-    <li><%= link_to('Most arguments won','/users?order=maw') %></li>
-    <li><%= link_to("Default order",users_path)  %></li>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    Order by...
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><%= link_to('Most votes placed','/users?order=mvp') %></li>
+    <li role="presentation"><%= link_to('Most votes correct', '/users?order=mvc') %></li>
+    <li role="presentation"><%= link_to('Most arguments posted','/users?order=map') %></li>
+    <li role="presentation"><%= link_to('Most arguments won','/users?order=maw') %></li>
+    <li role="presentation"><li><%= link_to("Default order",users_path)  %></li></li>
   </ul>
 </div>
 
