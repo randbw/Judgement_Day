@@ -20,6 +20,7 @@ factors.
 * A footer which pushes you back to the top of the page
 * My own commenting system. Not a fan of Disqus
 * The ability to turn arguments into dropdowns which you could hide if you chose
+* Different colours for different user reputations
 
 ## Thanks!
 
